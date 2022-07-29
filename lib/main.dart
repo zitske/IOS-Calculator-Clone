@@ -1,4 +1,4 @@
-import 'package:auto_size_text_field/auto_size_text_field.dart';
+//import 'package:auto_size_text_field/auto_size_text_field.dart';
 import 'package:calculator/utils/display.dart';
 import 'package:calculator/utils/operations.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +49,24 @@ class _MyHomePageState extends State<MyHomePage> {
     // 3 = mult
     // 4 = div
     // 5 = porc
+    void chk(String val) {
+      if (!RegExp(r'^[0-9]*$').hasMatch(val.characters.last)) {
+        switch (val.characters.last) {
+          case '%':
+            break;
+          case '*':
+            break;
+          case '/':
+            break;
+          case '+':
+            break;
+          case '-':
+            break;
+          case '=':
+            break;
+        }
+      }
+    }
 
     @override
     void initState() {
@@ -75,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Expanded(
                           child: Container(
                             //color: Colors.red,
-                            child: AutoSizeTextField(
+                            child: TextField(
                                 enabled: false,
                                 textAlign: TextAlign.end,
                                 controller: displayCotroller,
